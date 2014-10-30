@@ -110,7 +110,10 @@ while (!feof($file_handle))
 		
 		for ($i = 0; $i < count($row); $i++)
 		{
-			$data->{$headers[$i]} = $row[$i];
+			if ($row[$i] != '')
+			{
+				$data->{$headers[$i]} = $row[$i];
+			}
 		}
 
 		if ($data->id == '8c811258-4c0a-457e-9a11-ea54ebef2b86')
